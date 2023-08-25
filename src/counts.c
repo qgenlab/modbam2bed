@@ -600,7 +600,7 @@ plp_data calculate_pileup(
                             }
                             // any mod in the family
                             if (mod.canonical_base == mb.base) {
-                                if (mod.qual > best_score) { best_mod = k; best_score = mod.qual; }
+                                if ((mod.qual > best_score) || (best_score<0.00000001 && mod.qual >= best_score) ) { best_mod = k; best_score = mod.qual; }
                                 canon_score -= mod.qual;
                             }
                         }
